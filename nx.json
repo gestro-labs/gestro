@@ -16,5 +16,9 @@
     ]
   },
   "nxCloudId": "66eb5e5860432e7b196e5681",
-  "useInferencePlugins": true
+  "useInferencePlugins": true,
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libs"
+  }
 }
