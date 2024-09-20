@@ -34,8 +34,9 @@ jobs:
       - run: >
           pnpm dlx nx-cloud start-ci-run \
           --distribute-on .nx/workflows/dynamic-changesets.yaml \
-          --stop-agents-after build
+          --stop-agents-after e2e-ci
 
       - run: pnpm install --no-frozen-lockfile
 
-      - run: pnpm exec nx affected -t lint test build --parallel $(nproc)
+      - run: pnpm exec nx affected -t lint build --parallel=$(nproc)
+      - run: pnpm exec nx affected -t test e2e-ci --parallel=$(nproc) -- --runInBand
